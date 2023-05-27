@@ -270,7 +270,7 @@ rf_classifier.fit(X_train, y_train)
 y_pred = rf_classifier.predict(X_test)
 
 # Generate the classification report
-report = classification_report(y_test, y_pred)
+report = classification_report(y_test, y_pred, zero_division = 0)
 
 # Print the classification report
 print(report)
@@ -290,7 +290,7 @@ plt.show()
 # # Analysis
 
 # %% [markdown]
-# If the ActionLatency is <= 56.705, the tree will follow the left branch from this node. The Gini impurity score = 0.807 suggests that the samples in this node are distributed across multiple LeagueIndex rather than being predominantly in a single LeagueIndex. Samples = 1674 represents the number of samples(data points) that reached this node during the training processes. The value = [118, 277, 482, 634, 639, 490, 30] shows the distribution of target LeagueIndex, the values correspond to the counts of each LeagueIndex Rank, for example there are 118 samples with LeagueIndex 1.
+# If the ActionLatency is <= 66.11, the tree will follow the left branch from this node. The Gini impurity score = 0.807 suggests that the samples in this node are distributed across multiple LeagueIndex rather than being predominantly in a single LeagueIndex. Samples = 1670 represents the number of samples(data points) that reached this node during the training processes. The value = [141, 161, 463, 663, 663, 442, 37] shows the distribution of target LeagueIndex, the values correspond to the counts of each LeagueIndex Rank, for example there are 141 samples with LeagueIndex 1 , 277 samples with LeagueIndex 2, and so on.
 
 # %% [markdown]
 #  # Hypothetical: 
