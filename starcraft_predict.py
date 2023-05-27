@@ -209,13 +209,8 @@ print(feature_importance_df)
 # A random forest classifier was chosen for predicting player rankings based on performance since it's good at handling complex relationships, player performance data often contains intricate relationships and interactions between various perofrmance metrics. Random forest can effectively capture and model these complex relationships.
 
 # %%
-# Get the first tree from the Random Forest classifier
-selected_features = ['APM', 'ActionLatency', 'NumberOfPACs', 'GapBetweenPACs', 'TotalHours', 'SelectByHotkeys', 'AssignToHotkeys', 'WorkersMade', 'ActionsInPAC', 'MinimapAttacks', 'MinimapRightClicks', 'TotalMapExplored']
-X2 = X[selected_features]
-
-# %%
 # Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X2, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # %%
 # Initialize the Random Forest Classifier
@@ -228,7 +223,7 @@ rf_classifier.fit(X_train, y_train)
 y_pred = rf_classifier.predict(X_test)
 
 # Generate the classification report
-report = classification_report(y_test, y_pred)
+report = classification_report(y_test, y_pred, zero_division = 0)
 
 # Print the classification report
 print(report)
@@ -248,6 +243,8 @@ print(report)
 # Macro average alculates the average performance across all ranks, giving equal weight to each rank, it provides an overall evaluation of the model's performance without considering rank imbalance.
 # 
 # Weighted average calculates the average performance across all ranks, but takes into account the number of instances of each rank. It provides an evaluation that considers rank imbalance by giving more weight to ranks with more instances.
+# 
+# Since there were no instances predicted as Grandmaster(rank 7), the precision, recall, and F1-score for grandmaster are all 0. This can happen when grandmaster rank is underrepresented in the training data, leading the model to have difficulty predicting this rank accurately.
 
 # %% [markdown]
 # # Tree Plot
