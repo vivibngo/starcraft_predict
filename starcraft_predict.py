@@ -230,15 +230,15 @@ print(report)
 
 # %% [markdown]
 # # Analysis
-# Precision is the proportion of correctly predicted instances of a specific LeagueIndex. A precision of 0.44 for LeagueIndex of 1 (Bronze) means that 44% of the instances predicted as LeagueIndex 1 were actually LeagueIndex 1(Bronze).
+# Precision is the proportion of correctly predicted instances of a specific LeagueIndex. A precision of 0.38 for LeagueIndex of 1 (Bronze) means that 38 of the instances predicted as LeagueIndex 1 were actually LeagueIndex 1(Bronze).
 # 
-# Recall is known as true positive rate, its the proportion of correctly predicted instances of a specific rank our of all the instances that actually belong to that rank. For example a recall of 0.33 for LeagueIndex 1(Bronze) means that 33% of the actual instances of LeagueIndex 1 were correctly predicted as Bronze.
+# Recall is known as true positive rate, its the proportion of correctly predicted instances of a specific rank our of all the instances that actually belong to that rank. For example a recall of 0.38 for LeagueIndex 1(Bronze) means that 38% of the actual instances of LeagueIndex 1 were correctly predicted as Bronze.
 # 
 # The F1-score is the harmonic mean of precision and recall, it is a single metric that combines precision and recall. It is often used when there is an imbalance between class. 
 # 
 # Support refers to the number of instances in each rank in the test data.
 # 
-# Accuracy is the overall proportion of correctly predicted instances across all classes. It measures the overall performance of the model. The model is 43% accurate.
+# Accuracy is the overall proportion of correctly predicted instances across all classes. It measures the overall performance of the model. The model is 42% accurate.
 # 
 # Macro average alculates the average performance across all ranks, giving equal weight to each rank, it provides an overall evaluation of the model's performance without considering rank imbalance.
 # 
